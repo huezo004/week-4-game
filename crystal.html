@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crystal Collector </title>
+	  <link rel="stylesheet" type="text/css" href="c.css">
+       <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	  <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body background="b.jpg">
+<div id="title" >CrystalsCollector!</div>
+<div id="instruction">Click on each crystal to reveal their number!</div>
+<div>
+	<div id="number-total">#</div>
+	<div id="wins-losses">#*</div>
+<div>
+
+<div id="image-container">     
+	<img id="blue"  src="blue.png" >
+	<img id="green" src="green.png"> 
+	<img  id="red"  src="red.png"> 
+	<img  id="yellow" src="yellow.png"> 
+</div>
+
+<div id=total>Your total score is: </div>
+<div id=total-score></div>
+
+<script>
+   //19-120
+  var max= 12; 
+  var min=1; 
+  var max2= 120; 
+  var min2=19; 
+  var blue= Math.floor(Math.random() * (max - min + 1)) + min;
+  var green= Math.floor(Math.random() * (max - min + 1)) + min;
+  var red=  Math.floor(Math.random() * (max - min + 1)) + min;
+  var yellow= Math.floor(Math.random() * (max - min + 1)) + min;
+  var total=0; 
+  var random=  Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+  var wins=0; 
+  var losses=0; 
+  var winsLossesString= "Wins:" + wins + "\n" + "Losses:" + losses+ "\n"; 
+ 
+  console.log(blue);
+  console.log(red);
+  console.log(green);
+  console.log(yellow);
+
+
+function generate(){
+
+ 	total+= blue; 
+
+ 	if( total=== random ){
+ 	    wins++; 
+ 		var winsLossesString1= "You win!\n"+ "Wins:" + wins + "\n" + "Losses:" + losses+ "\n"; 
+        $("#total-score").html(total);
+        $("#wins-losses").html(winsLossesString1); 
+         //RESTART 
+        total=0; 
+        random=  Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+        $("#number-total").html(random); 
+         blue= Math.floor(Math.random() * (max - min + 1)) + min;
+       
+ 	}
+ 	if(total> random){
+ 		losses++;  
+ 		var winsLossesString2=  "You loose!\n"+ "Wins:" + wins + "\n" + "Losses:" + losses+ "\n"; 
+ 		$("#total-score").html(total);
+        $("#wins-losses").html(winsLossesString2); 
+        //RESTART
+         total=0; 
+         random=  Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+         $("#number-total").html(random); 
+         blue= Math.floor(Math.random() * (max - min + 1)) + min; 
+ 	}
+  	    $("#total-score").html(total);
+
+   }// end generate()
+
+function generateGreen(){
+
+ 	total+= green; 
+
+ 	if( total=== random ){
+ 	    wins++; 
+ 		var winsLossesString1= "You win!\n"+ "Wins:" + wins + "\n" + "Losses:" + losses+ "\n"; 
+        $("#total-score").html(total);
+        $("#wins-losses").html(winsLossesString1); 
+         //RESTART 
+        total=0; 
+        random=  Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+        $("#number-total").html(random); 
+         blue= Math.floor(Math.random() * (max - min + 1)) + min;
+       
+ 	}
+ 	if(total> random){
+ 		losses++;  
+ 		var winsLossesString2="You loose!\n"+ "Wins:" + wins + "\n" + "Losses:" + losses+ "\n"; 
+ 		$("#total-score").html(total);
+        $("#wins-losses").html(winsLossesString2); 
+        //RESTART
+         total=0; 
+         random=  Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+         $("#number-total").html(random); 
+         blue= Math.floor(Math.random() * (max - min + 1)) + min; 
+ 	}
+  	    $("#total-score").html(total);
+
+   }// end generateG()
+
+function generateRed(){
+
+ 	total+= red; 
+
+ 	if( total=== random ){
+ 	    wins++; 
+ 		var winsLossesString1= "You win!\n"+ "Wins:" + wins + "\n" + "Losses:" + losses+ "\n"; 
+        $("#total-score").html(total);
+        $("#wins-losses").html(winsLossesString1); 
+         //RESTART 
+        total=0; 
+        random=  Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+        $("#number-total").html(random); 
+         blue= Math.floor(Math.random() * (max - min + 1)) + min;
+       
+ 	}
+ 	if(total> random){
+ 		losses++;  
+ 		var winsLossesString2= "You loose!\n"+ "Wins:" + wins + "\n" + "Losses:" + losses+ "\n"; 
+ 		$("#total-score").html(total);
+        $("#wins-losses").html(winsLossesString2); 
+        //RESTART
+         total=0; 
+         random=  Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+         $("#number-total").html(random); 
+         blue= Math.floor(Math.random() * (max - min + 1)) + min; 
+ 	}
+  	    $("#total-score").html(total);
+
+   }// end generate
+
+function generateYellow(){
+
+ 	total+= yellow; 
+
+ 	if( total=== random ){
+ 	    wins++; 
+ 		var winsLossesString1= "You win!\n"+ "Wins:" + wins + "\n" + "Losses:" + losses+ "\n"; 
+        $("#total-score").html(total);
+        $("#wins-losses").html(winsLossesString1); 
+         //RESTART 
+        total=0; 
+        random=  Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+        $("#number-total").html(random); 
+         blue= Math.floor(Math.random() * (max - min + 1)) + min;
+       
+ 	}
+ 	if(total> random){
+ 		losses++;  
+ 		var winsLossesString2="You loose!\n"+ "Wins:" + wins + "\n" + "Losses:" + losses+ "\n"; 
+ 		$("#total-score").html(total);
+        $("#wins-losses").html(winsLossesString2); 
+        //RESTART
+         total=0; 
+         random=  Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+         $("#number-total").html(random); 
+         blue= Math.floor(Math.random() * (max - min + 1)) + min; 
+ 	}
+  	    $("#total-score").html(total);
+
+   }// end generateYellow
+
+
+  $("#number-total").html(random); 
+  $("#wins-losses").html(winsLossesString);
+  $("#blue").click(generate); 
+  $("#green").click(generateGreen); 
+  $("#red").click(generateRed); 
+  $("#yellow").click(generateYellow); 
+
+</script>
+
+</body>
+</html>
